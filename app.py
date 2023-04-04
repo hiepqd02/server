@@ -12,7 +12,7 @@ CORS(app)
 @app.route("/run-tests")
 def run_tests():
     module_name = request.args.get('module', type=str)
-    scripts_path = f"{os.environ.get('HOME')}/AutoTest/test/pythonProject/TestScripts/{module_name}.sh"
+    scripts_path = f"{os.environ.get('HOME')}/AutoTest/test/TestScripts/{module_name}.sh"
     test_process = subprocess.Popen(["/bin/bash", scripts_path])
     return 'Executing...'
 
